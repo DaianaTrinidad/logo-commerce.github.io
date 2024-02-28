@@ -1,0 +1,54 @@
+<div class="burguer-menu-interface">
+    <% if(locals.isLogged && locals.admin) { %>
+
+        <h2 class="burguer-menu-title">Menu</h2>
+        <div class="burguer-menu-link">
+            <a href="/products">Productos</a>
+        </div>
+        <div class="burguer-menu-link">
+            <a href="/products/create">Crear producto</a>
+        </div>
+        <div class="burguer-menu-link">
+            <a href="/profile">Perfil</a>
+        </div>
+        <div class="burguer-menu-link">
+            <a href="/carrito">Carrito</a>
+        </div>
+        <button class="burguer-menu-back">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+    <% } else if (locals.isLogged) { %>
+
+        <h2 class="burguer-menu-title">Menu</h2>
+        <div class="burguer-menu-link">
+            <a href="/products">Productos</a>
+        </div>
+        <div class="burguer-menu-link">
+            <a href="/profile">Perfil</a>
+        </div>
+        <div class="burguer-menu-link">
+            <a href="/carrito">Carrito</a>
+        </div>
+        <button class="burguer-menu-back">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+    <% } else { %>
+
+        <h2 class="burguer-menu-title">Menu</h2>
+        <div class="burguer-menu-link">
+            <a href="/products">Productos</a>
+        </div>
+        <div class="burguer-menu-link">
+            <a href="/login">Ingresar</a>
+        </div>
+        <div class="burguer-menu-link">
+            <a href="/registro">Crear perfil</a>
+        </div>
+        <button class="burguer-menu-back">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+    <% } %>
+</div>

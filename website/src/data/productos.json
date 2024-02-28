@@ -1,0 +1,30 @@
+[
+  {
+    "id": 2,
+    "name": "Remera oversize",
+    "price": 3000,
+    "discount": 15,
+    "image": "remera-oversize.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Campera de jean",
+    "price": 7000,
+    "discount": 20,
+    "image": "campera-jean.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Jogger",
+    "price": 3000,
+    "discount": 10,
+    "image": "jogger.jpg"
+  },
+  {
+    "id": "c57d64d7-f782-4570-9c72-bd6520298e04",
+    "name": "Buzo oversize",
+    "price": 12000,
+    "discount": 15,
+    "image": "image-1695529172712.jpg"
+  }
+]

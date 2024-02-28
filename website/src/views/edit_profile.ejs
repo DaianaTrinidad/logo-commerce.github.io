@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head  >
+    <%- include("partials/head", {title: "Formulario de edición"}) %>
+    <script src="/js/editUser.js" defer></script>
+</head>
+<body>
+
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <div>
+        <h2 class="title">Editar usuario</h2>
+    </div>
+
+    <form class="edit-profile-form" action="/profile/<%= user.id %>?_method=put" method="post" id="editForm">
+
+            <div class="info-user-container">
+                <label for="name">Nombre del usuario:</label>
+                <input class="profile-edit-input" type="text" value="<%= user.name %>" id="name" name="name" placeholder="nombre">
+                <span class="errorMsg" id="nameError"></span>
+            </div>
+
+            <div>
+                <label for="last_name">Apellido del usuario:</label>
+                <input class="profile-edit-input" type="text" value="<%= user.last_name %>" id="last_name" name="last_name" placeholder="apellido">
+                <span class="errorMsg" id="last_nameError"></span>
+            </div>
+
+            <button class="edit-profile-button" type="submit">Guardar usuario</button>
+    </form>
+    <%- include("partials/burguerMenu") %>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>

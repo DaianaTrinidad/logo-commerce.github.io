@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Inicio"}) %>
+</head>
+<body>
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <!------------------------------------- MAIN ----------------------------------->
+    <main>
+        
+        <!-- BANNER -->
+        <section class="banner">
+            <img class="banner-image" src="images/home/banner.png" alt="">
+        </section>
+
+        <!-- FILTER BUTTON -->
+        <div class="home-title-container">
+            <h1 class="home-title">NUESTROS PRODUCTOS</h1>
+        </div>
+
+        <!-- PRODUCTS -->
+        <section class="products-section">
+
+            <!-- PRODUCTS -->
+            <% products.forEach(product => { %>
+
+                <article class="product-article">
+                    <div class="product-image-price-container">
+                        <a href="/products/<%= product.id %>">
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                        </a>
+                        <p class="product-price">$<%= product.price %></p>
+                        <p class="product-discount"><%= product.discount %> OFF</p>
+                    </div>
+                    <h2 class="product-name"><%= product.name %></h2>
+                </article>
+            <% }) %>
+
+            <%- include("partials/burguerMenu") %>
+        </section>
+    </main>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>

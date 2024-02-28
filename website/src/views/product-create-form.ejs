@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Formulario de creación"}) %>
+    <script src="/js/creacionProducto.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- LOGO -->
+        <%- include("partials/header")%>
+    </header>
+
+    <div>
+        <h2 class="title">Formulario de creacion de productos</h2>
+    </div>
+
+    <form class="create-product-form" action="/products" method="post" enctype="multipart/form-data" id="createForm">
+        <div>
+
+            <div class="input-containet-create-edit-product">
+                <label for="name">Nombre del producto:</label>
+                <input class="input-create-edit-form" type="text" id="name" name="name" placeholder="Ej: Buzo Novel">
+                <span class="errorMsg" id="nameError"></span>
+                <% if (locals.errors && errors.name) { %>
+                    <div>
+                        <p class="error-text"><%= errors.name.msg %></p>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="input-containet-create-edit-product">
+                <label for="price">Precio del producto:</label>
+                <input class="input-create-edit-form" type="number" id="price" name="price" placeholder="Ej: 150">
+                <span class="errorMsg" id="priceError"></span>
+                <% if (locals.errors && errors.price) { %>
+                    <div>
+                        <p class="error-text"><%= errors.price.msg %></p>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="input-containet-create-edit-product">
+                <label for="discount">Descuento:</label>
+                <input class="input-create-edit-form" type="number" id="discount" name="discount" placeholder="Ej: 10 off">
+                <span class="errorMsg" id="discountError"></span>
+                <% if (locals.errors && errors.discount) { %>
+                    <div>
+                        <p class="error-text"><%= errors.discount.msg %></p>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="input-containet-create-edit-product">
+                <label for="image">Imagen:</label>
+                <input class="input-create-edit-form" type="file" name="image" id="image">
+                <span class="errorMsg" id="imageError"></span>
+                <% if (locals.errors && errors.image) { %>
+                    <div>
+                        <p class="error-text"><%= errors.image.msg %></p>
+                    </div>
+                <% } %>
+            </div>
+
+        </div>
+
+        <div class="create-edit-product-submit-button">
+            <button type="submit">Guardar producto</button>
+        </div>
+    </form>
+
+    <%- include("partials/burguerMenu") %>
+
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>

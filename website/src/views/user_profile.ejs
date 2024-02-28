@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Profile"}) %>
+</head>
+<body>
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <!------------------------------------- MAIN ----------------------------------->
+    <main class="bg-rgst">
+        
+                <div class="user-container"> 
+                    <div class="profile-image-container form-g-image image-i ">
+                        <img class="profile-image" src="/images/usersProfile/<%=user.profile_picture %>">
+                    </div>
+
+                    <div class="user-info">
+                        <div class="input-rgst user-p ">
+                            <div class="labels-rgst">
+                                <p>Nombre:</p>
+                            </div>
+                            <div class="box-rgstr-inpt">
+                                <%= user.name %>
+                            </div>
+                        </div>
+
+                        <div class="input-rgst user-p ">
+                            <div class="labels-rgst ">
+                                <p>Apellido:</p>
+                            </div>
+                            <div class="box-rgstr-inpt">
+                                <%= user.last_name %>
+                            </div>
+                        </div>
+
+                        <div class="input-rgst user-p ">
+                            <div class="labels-rgst ">
+                                <p>Email:</p>
+                            </div>
+                            <div class="box-rgstr-inpt">
+                                <%= user.email %>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <form class="form-rgst" method="post" action="/logout">
+                        <button class="profile-button" type="submit">Logout</button>
+                    </form>
+
+                    <form class="form-rgst" method="get" action="/profile/<%= user.id %>/edit">
+                        <button class="profile-button" type="submit">Edit</button>
+                    </form>
+
+                    <%- include("partials/burguerMenu") %>
+                </div>
+    </main>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>
+

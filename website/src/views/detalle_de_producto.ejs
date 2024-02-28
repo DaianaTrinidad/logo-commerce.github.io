@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head", {title: product.name}) %>
+</head>
+<body>
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <!------------------------------------- MAIN ----------------------------------->
+    <main class="detalle_de_producto">
+        <section class="product-article input-create-edit-form">
+            <div class="product-image-price-container">
+                <a href="">
+                    <img class="product-image" src="/images/products/<%= product.image %>" alt="Buzo">
+                </a>
+            </div>
+            <div>
+                <h1 class="product-name-detail"><%= product.product_name %></h1>
+            </div>
+            <div>
+                <p class="product-price-detail">$<%= product.price %></p>
+                <p class="product-discount-detail"><%=product.discount%>%</p>
+            </div>
+
+            <form action="/carrito/<%= product.id %>" method="post">
+                <label for="size">Talle</label>
+                <select id="size" class="form-select form-select talles-detail" name="size">
+                    <% sizes.forEach(size => { %>
+                        <option value=<%= size.size_name %>><%= size.size_name %></option>
+                    <% }); %>
+                </select>
+
+                <label for="quantity">Cantidad</label>
+                <select name="quantity" id="quantity">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <button class="agregar-carrito" type="submit">AGREGAR AL CARRITO</button>
+            </form>
+                
+            <div>
+                <% if(locals.isLogged && locals.admin){ %>
+                    <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail" style="margin: 2px;">
+                        <button type="submit" class="agregar-al-carrito-detail ">Eliminar</button>   
+                    </form>
+
+                    <form action="/products/<%= product.id %>/edit" method="get" class="agregar-al-carrito-detail" style="margin: 2px;">
+                        <button type="submit" class="agregar-al-carrito-detail">Editar</button>
+                    </form>
+
+                <% } %>
+            </div>
+
+    <%- include("partials/burguerMenu") %>
+
+        </section>
+    </main>
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>

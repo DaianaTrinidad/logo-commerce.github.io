@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Carrito"}) %>
+</head>
+<body>
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <!------------------------------------- MAIN ----------------------------------->
+
+    <main>
+
+        <% productosUsuario.forEach(producto => { %>
+            <div class="producto-en-carrito">
+                <div class="contenedor-imagen-producto-carrito">
+                    <img class="imagen-producto-carrito" src="/images/products/<%= producto.image %>" alt="Imágen del producto">
+                </div>
+                <div class="info-producto-carrito">
+                    <p class="nombre-producto-carrito"><%= producto.product_name %></p>
+                    <p class="precio-producto-carrito">Precio: $<%= producto.total %></p>
+                    <p class="talle-producto-carrito">Talle: <%= producto.size %></p>
+                    <p class="cantidad-producto-carrito">Cantidad: <%= producto.quantity %></p>
+                    <form action="/carrito/<%=producto.id%>?_method=delete" method="POST" class="formulario-borrar-producto-carrito">
+                        <button type="submit" class="borrar-producto-carrito">Borrar</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+
+        <% if(productosUsuario.length > 0) { %>
+            <div class="total-carrito">
+                <p>Total: <%= total %></p>
+            </div>
+    
+            <div class="contenedor-boton-comprar-carrito">
+                <button class="boton-comprar-carrito" type="submit">Iniciar Compra</button>
+            </div>
+        <% } else { %>
+            <h2 class="mensaje-carrito-vacio">Empezá a agregar productos a tu carrito!</h2>
+        <% } %>
+
+    </main>
+
+    <%- include("partials/burguerMenu") %>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>

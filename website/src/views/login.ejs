@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("partials/head", {title: "Ingresar"}) %>
+</head>
+
+<body>
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <!-- LOGO -->
+        <%- include("partials/header") %>
+        <script src="/js/login.js" defer></script>
+    </header>
+
+    <!------------------------------------- MAIN ----------------------------------->
+    <div class="login-container">
+
+        <div class="info">
+            <p class="txt-1"> GRACIAS POR VISITARNOS </p>
+            <h2>BIENVENIDO DE NUEVO</h2>
+            <p class="txt-2">
+                ¡Bienvenido a nuestra página de inicio de sesión! Estamos encantados de tenerte de vuelta. Ingresa tus credenciales para acceder a tu cuenta personalizada y desbloquear un mundo de posibilidades.
+            </p>
+        </div>
+
+        <form class="form" action="/login" method="POST" id="loginForm">
+            <h2>LOGIN</h2>
+
+            <p> Estamos aquí para hacer que tu experiencia sea excepcional. Gracias por confiar en nosotros como tu destino en línea.¡Ingresa ahora y comienza tu viaje con nosotros!
+            </p>
+
+            <div class="input">
+                <span class="errorMsg" id="emailError"></span>
+                <% if(locals.errors && errors.email) { %>
+                    <div class="access-error-text">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
+                <input type="email" name="email" class="box" placeholder="email" id="email">
+
+                <span class="errorMsg" id="passwordError"></span>
+                <% if(locals.errors && errors.password) { %>
+                    <div class="access-error-text">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
+                <input type="password" name="password" class="box" placeholder="password" id="password">
+
+                <label class="remember-label" for="recordame">recordame</label>
+                <input type="checkbox" name="recordame">
+                <button type="submit" value="login" class="boton-log">Login</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+    <%- include("partials/burguerMenu") %>
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<h1 class="header-logo"><a href="/">LOGO</a></h1>
+
+<!-- HAMBURGUER MENU -->
+<button href="#" class="hamburguer-menu">
+        <i class="fa-solid fa-bars hamburguer-menu"></i>
+</button>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <% if(locals.isLogged && locals.admin) { %>
+
+        <a class="navbar-item" href="/products">
+            Productos
+        </a>
+    
+        <a class="navbar-item" href="/products/create">
+            Crear producto
+        </a>
+
+        <a class="navbar-item" href="/profile">
+            Perfil
+        </a>
+
+        <a class="navbar-item" href="/carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    <% } else if (locals.isLogged) { %>
+
+        <a class="navbar-item" href="/products">
+            Productos
+        </a>
+
+        <a class="navbar-item" href="/profile">
+            Perfil
+        </a>
+
+        <a class="navbar-item" href="/carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    <% } else { %>
+
+        <a class="navbar-item" href="/products">
+            Productos
+        </a>
+
+        <a class="navbar-item" href="/login">
+            Ingresar
+        </a>
+    
+        <a class="navbar-item" href="/registro">
+            Crear cuenta
+        </a>
+
+    <% } %>
+</nav>

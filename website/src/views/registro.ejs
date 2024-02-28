@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Registro"}) %>
+</head>
+<body>
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+        <script src="/js/registro.js" defer></script>
+    </header>
+
+    <!------------------------------------- MAIN ----------------------------------->
+    <main class="bg-rgst">
+
+                <div class="rgst-container">
+                    <div class="info-rgst">            
+                        <h2> Registrate aqui!</h2>
+                        <hr />
+                        <p class="txt-2">¡Bienvenido a nuestra página de Registro!
+                            Completa tus datos y accede a beneficios exclusivos!
+                            Podras tener acceso a mayores descuentos, horario anticipado de compra de 
+                            productos en sus lanzamientos y ademas invitaciones exclusivas a eventos.
+                        </p>
+                        
+                        <h3 class="LG"> LOGO </h3>
+                    </div>
+
+                    <form class="form-rgst" method="post" action="/registro" enctype="multipart/form-data" id="registerForm">
+                        <div class="input-rgst">
+                            <label for="name" class="labels-rgst">Name:</label>
+                            <!-- <input type="feedback" id="name" name="name" required> -->
+                            <input type="text" class="box-rgstr-inpt" placeholder="Name" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : ""%>">
+                            <span class="errorMsg" id="nameError"></span>
+                            <% if (locals.errors && errors.name) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.name.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="lastName" class="labels-rgst">Last Name:</label>
+                            <!-- <input type="feedback" id="lastName" name="lastName" required> -->
+                            <span class="errorMsg" id="lastNameError"></span>
+                            <input type="text" class="box-rgstr-inpt" placeholder="Last Name" name="lastName" id="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : ""%>">
+                            <% if (locals.errors && errors.lastName) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.lastName.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="email" class="labels-rgst">Email:</label>
+                            <input type="email" class="box-rgstr-inpt" placeholder="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email : ""%>">
+                            <span class="errorMsg" id="emailError"></span>
+                            <% if (locals.errors && errors.email) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.email.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="password" class="labels-rgst">Password:</label>
+                            <!-- <input type="password" id="password" name="password" required> -->
+                            <span class="errorMsg" id="passwordError"></span>
+                            <input type="password" class="box-rgstr-inpt" placeholder="Password" name="password" id="password">
+                            <% if (locals.errors && errors.password) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.password.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="imagenDePerfil" class="labels-rgst">Foto:</label>
+                            <input type="file" name="imagenDePerfil">
+                            <span class="feedback"></span>
+                            <% if (locals.errors && errors.imagenDePerfil) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.imagenDePerfil.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <button class="input-rgst bt-mg" type="submit">Register!</button>
+                    </form>
+
+                    <%- include("partials/burguerMenu") %>
+                </div>
+    </main>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>
+
