@@ -19,10 +19,10 @@
 * npm run dev
   
 ## Front-end
-* Utilizamos JavaScript, HTML, CSS, React
+*Utilizamos JavaScript, HTML, CSS, React.
   
 ## Back-end
-*Utilizamos Javascript, Sequelize
+*Utilizamos Javascript, Sequelize.
 
 ## Base de datos
 * MySQL
