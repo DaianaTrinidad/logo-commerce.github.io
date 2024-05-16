@@ -8,12 +8,12 @@
 * Poner en práctica todo lo aprendido dentro de Bootcamp de Digital House-2023
 
 ## Para correr el proyecto:
-* Website:
+* **Website**
 * Entrar a la carpeta Website
 * npm i
 * Inicializar XAAMPP (Apache y MySQL)
 * npm start
-* Dashboard:
+* **Dashboard**
 * Entrar a la carpeta Dashboard
 * npm i
 * npm run dev
