@@ -9,9 +9,11 @@
 
 ## Para correr el proyecto:
 * Website:
+* npm i
 * Inicializar XAAMPP (Apache y MySQL)
 * npm start
 * Dashboard:
+* npm i
 * npm run dev
   
 ## Front-end
