@@ -9,10 +9,12 @@
 
 ## Para correr el proyecto:
 * Website:
+* Entrar a la carpeta Website
 * npm i
 * Inicializar XAAMPP (Apache y MySQL)
 * npm start
 * Dashboard:
+* Entrar a la carpeta Dashboard
 * npm i
 * npm run dev
   
