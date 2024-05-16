@@ -5,7 +5,7 @@
 ## Objetivos
 * Crear una aplicación utilizando JavaScript, Sequelize, Node.js, MySQL,React.
 * Aprender buenas prácticas
-* Poner en práctica todo lo aprendido dentro de Bootcamp de Digital House-2023
+* Poner en práctica todo lo aprendido dentro de Bootcamp de Digital House-2023.
 
 ## Para correr el proyecto:
 * **Website**
